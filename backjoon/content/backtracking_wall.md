@@ -1,4 +1,4 @@
-# Java
+# Java (onedimensional array)
 
 ```java
 
@@ -8,6 +8,7 @@ public class backtracking_wall {
 		static int[] a;
 		static int n;
 		static int k;
+		static int cnt =0;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
@@ -17,10 +18,12 @@ public class backtracking_wall {
 		a = new int[n];
 		
 		go(0,0);
+		System.out.println("cnt is " + cnt);
 	}
 	private static void go(int index, int zz) {
 		// TODO Auto-generated method stub
 		if(index ==k) {
+			cnt++;
 			for (int i = 0; i < n; i++) {
 				System.out.print(a[i] + " ");
 			}
