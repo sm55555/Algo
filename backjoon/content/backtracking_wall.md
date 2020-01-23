@@ -1,4 +1,4 @@
-# Java (onedimensional array)
+# Java (one-dimensional array)
 
 ```java
 
