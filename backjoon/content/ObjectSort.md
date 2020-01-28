@@ -16,6 +16,8 @@ public class Collection_Test {
 				this.y = y;
 				this.z = z;				
 			}
+			
+			// The first method
 
 			@Override
 			public int compareTo(fish o) {
@@ -36,6 +38,8 @@ public class Collection_Test {
 					return 0;
 				}
 			}
+			
+			// The second method
 			
 			@Override
 			public int compareTo(fish o) {
