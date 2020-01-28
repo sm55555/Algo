@@ -30,6 +30,7 @@ public class combi {
 				System.out.print(a[i] + " ");
 			}
 			System.out.println();
+			return;
 		}
 		
 		for (int i = 0; i < a.length; i++) {
