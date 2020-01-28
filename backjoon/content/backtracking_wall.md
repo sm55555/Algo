@@ -1,5 +1,7 @@
 # Java (one-dimensional array)
 
+* count is nCk
+
 ```java
 
 import java.util.Scanner;
