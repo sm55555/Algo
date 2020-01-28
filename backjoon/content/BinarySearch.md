@@ -1,5 +1,8 @@
 # Java
 
+* Array must be sorted
+* logn
+
 ```java
 
 import java.util.Scanner;
