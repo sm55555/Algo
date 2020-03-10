@@ -1,0 +1,60 @@
+# Java
+
+```java
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Main {
+		static int n,k;
+		static int[] a;
+		static int[] b;
+	
+	public static void main(String[] args) {
+	
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		k = sc.nextInt();
+		
+		a = new int [n];
+		b = new int [n-1];
+		
+		String s = sc.next();
+		String[] t = s.split(",");
+		for (int i = 0; i < n; i++) {
+			a[i] = Integer.valueOf(t[i]);			
+		}
+		
+		for (int i = 0; i < k; i++) {
+			go();
+		}
+		
+		for (int i = 0; i < n-1; i++) {
+			
+			if(i == n-2) {
+				System.out.print(b[i]);
+			}else {
+				System.out.print(b[i] + ",");
+			}
+			 
+		}
+	
+		
+	}
+
+	private static void go() {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < n-1; i++) {
+			b[i] += a[i+1] -a[i];
+		}
+	}
+
+
+}
+
+```
