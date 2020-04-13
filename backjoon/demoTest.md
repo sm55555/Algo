@@ -21,9 +21,8 @@ public class Solution {
 }
 
 ```
-# C++
 
-```c++
+```
 
 import java.util.Scanner;
 
