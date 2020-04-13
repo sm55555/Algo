@@ -22,7 +22,7 @@ public class Solution {
 
 ```
 
-```
+```java
 
 import java.util.Scanner;
 
