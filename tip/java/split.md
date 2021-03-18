@@ -1,6 +1,36 @@
-# split이 생각처럼 안되는 경우가 있다.
+# split
+
+<img src="https://user-images.githubusercontent.com/38831314/111597613-b0fb1a80-8811-11eb-97c4-95811eacceb7.png">
+
+```java
+
+String 문자열 = "가:나:다:가나다";
+String[] 나눈배열 = 문자열.split(":");
 
 
+//나눈배열 : {"가", "나", "다", "가나다"}
+System.out.println(나눈배열[0]);
+//결과 : 가
+System.out.println(나눈배열[나눈배열.length-1]);
+//결과 : 가나다
+
+```
+
+#### 정상적으로 결과가 나온다.
+
+<img src="https://user-images.githubusercontent.com/38831314/111597914-0505ff00-8812-11eb-9f9b-f5fe1a6b4036.png">
+
+```java
+
+String 문자열 = "가.나.다.가나다";
+String[] 나눈배열 = 문자열.split(".");
+		
+System.out.println(나눈배열[0]);
+System.out.println(나눈배열[나눈배열.length-1]);
+
+```
+
+#### ArrayIndexOutBounds 에러가 뜬다.
 
 
 이건 split의 인자로 들어가는 String 토큰이 regex 정규식이기 때문이다. 
