@@ -1,0 +1,67 @@
+# Java
+
+```java
+
+class Solution {
+    static int[] a;
+    static int max = 0;
+    public int solution(int[][] needs, int r) {
+        int answer = needs.length;
+        a = new int[r];
+        max = needs[0].length;
+        go(1,0,needs[0].length,r,needs);
+
+        return answer-max;
+    }
+    
+    public static void go(int index, int select, int n, int m, int[][] needs){
+        if(select == m){
+            // for(int i=0; i<m; i++){
+            //     System.out.print(a[i] + " ");
+            // }
+            // System.out.println();
+            
+            int temp=0;
+            
+            for(int i=0; i<needs.length; i++){
+                // 전체 돌면서
+                boolean check = true;
+                
+                for(int j=0; j<m; j++){
+                    needs[i][a[j]] -= 1;
+                }
+                
+                for(int j=0; j<needs[0].length; j++){
+                    if(needs[i][j] ==1){
+                        temp++;
+                        break;
+                    }
+                }
+                
+                for(int j=0; j<m; j++){
+                    needs[i][a[j]] += 1;
+                }
+                
+            }
+            
+            if(temp < max){
+                max = temp;
+            }
+            
+            return;
+        }
+        
+        if(index > n){
+            return;
+        }
+        
+        a[select] = index-1;
+        go(index+1,select+1,n,m,needs);
+        a[select] = 0;
+        go(index+1,select,n,m,needs);
+        
+        // System.out.println("!!");
+    }
+}
+
+```
