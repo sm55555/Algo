@@ -1,0 +1,33 @@
+# Java
+
+```java
+
+import java.util.*;
+
+class Solution {
+    public int solution(int[] gift_cards, int[] wants) {
+        int answer = 0;
+        
+        boolean[] check = new boolean[gift_cards.length];
+        
+        Arrays.sort(gift_cards);
+        Arrays.sort(wants);
+        int point =0;
+        for(int i=0; i<gift_cards.length; i++){
+            for(int j=point; j<gift_cards.length; j++){
+            
+                if(!check[j] && gift_cards[i] == wants[j]){
+                    answer++;
+                    check[j]=true;
+                    point =j+1;
+                    break;
+                }
+            }      
+        }
+        //System.out.println(gift_cards.length-answer);
+        
+        return gift_cards.length-answer;
+    }
+}
+
+```
