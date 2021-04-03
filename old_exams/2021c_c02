@@ -65,3 +65,33 @@ class Solution {
 }
 
 ```
+
+# Java
+
+```java
+
+import java.util.*;
+
+class Solution {
+    static int[] a;
+    static int max = 0;
+    public int solution(int[][] needs, int r) {
+        int answer = needs.length;
+        a = new int[needs[0].length];
+        int idx =0;
+        for(int i=0; i<needs[0].length; i++){
+           int temp =0;
+            for(int j=0; j<needs.length; j++){
+                temp+= needs[j][i];
+            }  
+            a[idx++] = temp;
+        }
+        
+        Arrays.sort(a);
+        
+        return a[a.length-r];
+    }
+    
+}
+
+```
