@@ -1,0 +1,88 @@
+# Java
+
+```java
+
+import java.io.*;
+import java.math.BigInteger;
+import java.util.*;
+
+public class Main {
+		static String S ="779091968 23 Sep 2009 system.zip\n 284164096 14 Aug 2013 to-do-list.xml\n 714080256 19 Jun 2013 blockbuster.mpeg\n       329 12 Dec 2010 notes.html\n 444596224 17 Jan 1950 delete-this.zip\n       641 24 May 1987 setup.png\n    245760 16 Jul 2005 archive.zip\n 839909376 31 Jan 1990 library.dll";
+		static String C = "Example";
+	public static void main(String[] args) throws IOException {
+
+		Scanner sc = new Scanner(System.in);
+		
+		
+
+		String[] a = S.split("\n");
+		
+		
+		int ans = 0;
+		
+		for(String temp : a) {
+			temp = temp.trim();
+//			System.out.println(temp);
+			
+			String[] senten = temp.split(" ");
+			
+			if(Integer.parseInt(senten[0]) < 245760) {
+				continue;
+			}
+			
+			StringBuilder date = new StringBuilder();
+			
+			date.append(senten[3]);
+			
+			if(senten[2].equals("Jan")) {
+				date.append("01");
+			}else if(senten[2].equals("Feb")) {
+				date.append("02");
+			}else if(senten[2].equals("Mar")) {
+				date.append("03");
+			}else if(senten[2].equals("Apr")) {
+				date.append("04");
+			}else if(senten[2].equals("May")) {
+				date.append("05");
+			}else if(senten[2].equals("Jun")) {
+				date.append("06");
+			}else if(senten[2].equals("Jul")) {
+				date.append("07");
+			}else if(senten[2].equals("Aug")) {
+				date.append("08");
+			}else if(senten[2].equals("Sep")) {
+				date.append("09");
+			}else if(senten[2].equals("Oct")) {
+				date.append("10");
+			}else if(senten[2].equals("Nov")) {
+				date.append("11");
+			}else {
+				date.append("12");
+			}
+			
+			date.append(senten[1]);
+			
+			if(Integer.valueOf(date.toString()) <=19900131) {
+				continue;
+			}
+			
+			ans++;
+			
+//			System.out.println(date.toString());
+			
+			//1990 
+//			if(Integer.parseInt(senten[3]) < 1990) {
+//				continue;
+//			}
+			
+		}
+		
+		System.out.println(ans);
+		
+		
+		
+		
+	}
+}
+
+```
