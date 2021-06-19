@@ -2,17 +2,20 @@
 
 ```java
 
-// you can also use imports, for example:
-// import java.util.*;
+import java.io.*;
+import java.math.BigInteger;
+import java.util.*;
 
-// you can write to stdout for debugging purposes, e.g.
-// System.out.println("this is a debug message");
+public class Main {
+		static String S ="John Doe, Peter Benjamin Parker, Mary Jane Watson-Parker, John Elvis Doe, John Evan Doe, Jane Doe, Peter Brian Parker";
+		static String C = "Example";
+	public static void main(String[] args) throws IOException {
 
-class Solution {
-    public String solution(String S, String C) {
-        // write your code in Java SE 8
+		Scanner sc = new Scanner(System.in);
+		
+		
 
-        		String[] b = S.split(", ");
+		String[] b = S.split(", ");
 		S = S.toLowerCase();
 		C = C.toLowerCase();		
 		String[] a = S.split(", ");
@@ -26,6 +29,8 @@ class Solution {
 				
 				a2[0] = a2[0].replaceAll("-", "");
 				a2[2] = a2[2].replaceAll("-", "");
+				a2[0] = a2[0].replaceAll("/", "");
+				a2[2] = a2[2].replaceAll("/", "");
 				tt.append(a2[0] + "." + a2[2]);
 				String t = a2[0] + "." + a2[2];
 				a[i] = tt.toString();
@@ -33,6 +38,8 @@ class Solution {
 				StringBuffer tt = new StringBuffer();
 				a2[0] = a2[0].replaceAll("-", "");
 				a2[1] = a2[1].replaceAll("-", "");
+				a2[0] = a2[0].replaceAll("/", "");
+				a2[1] = a2[1].replaceAll("/", "");
 				tt.append(a2[0] + "." + a2[1]);
 				String t = a2[0] + "." + a2[1];
 				a[i] = tt.toString();
@@ -45,7 +52,12 @@ class Solution {
 			int idx =2;
 			for (int j = i+1; j < a.length; j++) {
 				if(a[i].equals(a[j])) {
-					a[j] +=""+ idx +"";
+					
+					StringBuffer temp = new StringBuffer();
+					
+					temp.append(a[j]);
+					temp.append(idx);
+					a[j] = temp.toString();
 					idx++;
 				}
 			}
@@ -67,8 +79,11 @@ class Solution {
 		
 		
 		System.out.println(ans.toString());
-        return ans.toString();
-    }
+		
+		
+		
+		
+	}
 }
 
 
